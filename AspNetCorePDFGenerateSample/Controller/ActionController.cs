@@ -54,7 +54,6 @@ namespace AspNetCorePDFGenerateSample.Controller
             };
             _converter.Convert(pdf);
 
-            // return File(fileBytes, "application/pdf", $"ShpStatement.zip");
             return Ok(new APIRequestModel()
             {
                 Data = "PDF Generate Successfully",
