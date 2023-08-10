@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <buttton class="btn btn-primary" onclick="Generate_Onclick()">PDF GENERATE</buttton>
+    <a href="/api/action/pdfcreate" type="button" class="btn btn-success" download="GeneratedSample.pdf">Download PDF</a>
+</div>
+<script>
+    function Generate_Onclick() {
+        window.location.href = "@Url.Action("PdfGenerate", "Action")";
+    }
+    //function Generate_Onclick() {
+    //    var link = document.createElement('a');
+    //    $.ajax({
+    //        type: "GET",
+    //        url: "@Url.Content("~/")" + "api/action/pdfcreate",
+    //        dataType: 'json',
+    //        success: function (data) {
+    //            //console.log(data);
+    //            link.href = '../../Sample.pdf';
+    //            link.download = 'Sample.pdf';
+    //            link.dispatchEvent(new MouseEvent('click'));
+    //        },
+    //        complete: function (data) {
+
+    //        }
+    //    });
+    //}
+</script>
