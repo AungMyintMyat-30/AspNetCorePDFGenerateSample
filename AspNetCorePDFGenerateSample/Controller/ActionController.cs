@@ -1,4 +1,5 @@
-﻿using AspNetCorePDFGenerateSample.Utility;
+﻿using AspNetCorePDFGenerateSample.Model;
+using AspNetCorePDFGenerateSample.Utility;
 using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Http;
@@ -19,7 +20,7 @@ namespace AspNetCorePDFGenerateSample.Controller
             _converter = converter;
         }
 
-        [HttpGet("pdfcreate")]
+        [HttpPost("pdfcreate")]
         public IActionResult PdfGenerate()
         {
 
@@ -51,13 +52,14 @@ namespace AspNetCorePDFGenerateSample.Controller
                 GlobalSettings = globalSettings,
                 Objects = { objectSettings }
             };
-            var fileStream = _converter.Convert(pdf);
+            _converter.Convert(pdf);
 
-            return File(fileStream, "application/pdf","Sample.pdf");
-            //var fileBytes = _converter.Convert(pdf);
-
-            // return File(_converter.Convert(pdf), "application/pdf", "Test.pdf");
-            //return Ok();
+            // return File(fileBytes, "application/pdf", $"ShpStatement.zip");
+            return Ok(new APIRequestModel()
+            {
+                Data = "PDF Generate Successfully",
+                Links = "/Sample.pdf"
+            });
         }
     }
 }

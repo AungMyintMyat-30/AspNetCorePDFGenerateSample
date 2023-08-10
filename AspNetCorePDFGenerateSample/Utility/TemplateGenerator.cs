@@ -6,32 +6,34 @@ namespace AspNetCorePDFGenerateSample.Utility
     {
         public static string GetHTMLString()
         {
-            StringBuilder sb = new();
-            sb.Append(@"<html>
+            var sample = SampleDataList.GetAllSampleData();
+            var sb = new StringBuilder();
+            sb.Append(@"
+                        <html>
                             <head>
                             </head>
                             <body>
-                            <hr id='new1'>
-                            <div class='header' align='center'><h2> SAMPLE INVOICE </h2></div>
-                            <h4>Invoice Number : 001 </h4>
-                            <h4>Account Number : 002 </h4>
-                            <table class='table1' align='center'>
-                            <tr>
-                                <th>Shippers Reference</th>
-                                <th>Shipment Date</th>
-                                <th>Origin / Consignor</th>
-                                <th>Destination / Consignee</th>
-                            </tr>
-                            <tr>
-                                <td>{0}</td>
-                                <td>{1}</td>
-                                <td>{2}</td>
-                                <td>{3}</td>
-                            </tr>
-                            </table>
-                            <hr id='new2'>
+                                <div class='header' align='center'><h2> SAMPLE INVOICE </h2></div>
+                                <table align='center'>
+                                    <tr>
+                                        <th>Column 1</th>
+                                        <th>Column 2</th>
+                                        <th>Column 3</th>
+                                        <th>Column 4</th>
+                                    </tr>");
+            foreach (var sam in sample)
+            {
+                sb.AppendFormat(@"<tr>
+                                    <td>{0}</td>
+                                    <td>{1}</td>
+                                    <td>{2}</td>
+                                    <td>{3}</td>
+                                  </tr>", sam.Column1, sam.Column2, sam.Column3, sam.Column4);
+            }
+            sb.Append(@"
+                                </table>
                             </body>
-                         </html>");
+                        </html>");
             return sb.ToString();
         }
     }

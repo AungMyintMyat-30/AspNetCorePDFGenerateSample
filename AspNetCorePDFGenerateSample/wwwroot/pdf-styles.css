@@ -1,39 +1,16 @@
-﻿h4 {
-    margin-left: 50px;
-}
-
-.table1 {
-    width: 90%;
+﻿table {
+    width: 80%;
     border-collapse: collapse;
-    border-spacing: 10px;
-    margin-top: 50px;
 }
 
-.table1, th, td {
-    border: 3px solid gray;
+td, th {
+    border: 1px solid gray;
     padding: 15px;
-    font-size: 18px;
+    font-size: 22px;
     text-align: center;
 }
 
-    .table1 th {
-        color: black;
-    }
-
-    .table1 td {
-        color: black;
-        margin: 10px 0 10px 0;
-    }
-
-#new1 {
-    width: 100%;
-    margin-top: 10px;
-    border: 1px solid black;
-}
-
-#new2 {
-    position: absolute;
-    bottom: 60px;
-    width: 100%;
-    border: 1px solid black;
+table th {
+    background-color: lightblue;
+    color: white;
 }
