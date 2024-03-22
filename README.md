@@ -3,7 +3,7 @@
 # Configuration
 - Install-Package DinkToPdf.
 ![image](https://github.com/AungMyintMyat-30/AspNetCorePDFGenerateSample/assets/61227624/9c222f88-1169-449a-b084-bb1ebd565d92)
-- <a href="https://github.com/rdvojmoc/DinkToPdf/blob/master/v0.12.4/64%20bit/libwkhtmltox.dylib">Download</a> libwkhtmltox.dll, libwkhtmltox.dylib, libwkhtmltox.so files.
+- <a href="https://github.com/rdvojmoc/DinkToPdf/tree/master/v0.12.4/64%20bit">Download</a> libwkhtmltox.dll, libwkhtmltox.dylib, libwkhtmltox.so files.
 - Copy the dll files and paste to the project.
 - Select all of 3 dll files and click the properties and follow the image.
 - ![image](https://github.com/AungMyintMyat-30/AspNetCorePDFGenerateSample/assets/61227624/a0aeac26-9bac-4d76-a316-89a38e74ece5)
